@@ -1,13 +1,10 @@
 package designpattern;
 
-public class WhiteDuck extends Duck implements Flyable {
+public class WhiteDuck extends Duck {
 
     WhiteDuck () {
         System.out.println("WhiteDuck");
-    };
-
-    public void fly (){
-        System.out.println(" Fly");
+ //       flybehavier = new FlyWithWings();
     }
     
 }

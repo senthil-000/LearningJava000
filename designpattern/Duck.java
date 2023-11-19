@@ -3,23 +3,34 @@ package designpattern;
 
 public class Duck {
 
+    Flybehavier flybehavier;
+
+/* 
     public void  quack() {
         System.out.println(" Quack ");
     }
-/*
-    public void fly() {
-        System.out.println("Fly"); 
+*/
+
+    public void performFly() {
+        flybehavier.fly(); 
     }
-*/ 
+ 
     public void swim() {
         System.out.println("Swim");
     }
 
+    public void setBehavier(Flybehavier fb) {
+        flybehavier = fb;
+    }
+
     public static void main(String[] args) {
-        RubberDuck  rd = new RubberDuck();
+        Duck rd = new RubberDuck();
+        Duck wd = new WhiteDuck();
         
-        WhiteDuck wd = new WhiteDuck();
-        wd.fly();
+        wd.setBehavier(new FlyRockerPowered());
+        rd.setBehavier(new NoFly());
+        wd.performFly();
+        rd.performFly();
         
     }
 }
