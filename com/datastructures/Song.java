@@ -1,4 +1,4 @@
-package datastructures;
+package com.datastructures;
 
 public class Song implements Comparable<Song>{
     
@@ -6,6 +6,15 @@ public class Song implements Comparable<Song>{
     private String album;
     private String rating;
     private String Bpm;
+
+    public int hashCode(){
+        return album.hashCode();
+    }
+
+    public boolean equals(Object aSong){
+        Song s = (Song)  aSong;
+        return getAlbum().equals(s.getAlbum());
+    }
 
     public int compareTo(Song s){
         return album.compareTo(s.getAlbum());
@@ -41,6 +50,10 @@ public class Song implements Comparable<Song>{
 
     public void setBpm(String bpm) {
         Bpm = bpm;
+    }
+
+    public String toString(){
+        return album;
     }
 
     Song(String a, String n, String r, String bm) {
